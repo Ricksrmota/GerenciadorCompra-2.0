@@ -11,7 +11,9 @@ export class CadastroDeDisciplinaComponent implements OnInit {
   id = null;
   codigo = null;
   nome = null;
-  descricao = null;
+  preco = null;
+  url = null;
+  categoria=null;
   cadastro_ok = false;
   cadastro_erro = false;
   atualizar_ok = false;
@@ -27,14 +29,15 @@ export class CadastroDeDisciplinaComponent implements OnInit {
         .subscribe(disciplina => {
           this.codigo = disciplina.codigo;
           this.nome = disciplina.nome;
-          this.descricao = disciplina.descricao;
+          this.preco = disciplina.preco;
         });
     }
   }
 
+
   salvar() {
     if (this.id) {
-      this.disciplinasService.updateDisciplina(this.id, this.codigo, this.nome, this.descricao)
+      this.disciplinasService.updateDisciplina(this.id, this.codigo, this.nome, this.preco, this.url, this.categoria)
         .subscribe(disciplina => {
             this.atualizar_ok = true;
             this.atualizar_erro = false;
@@ -44,14 +47,14 @@ export class CadastroDeDisciplinaComponent implements OnInit {
             this.atualizar_erro = true;
           });
     } else {
-      this.disciplinasService.addDisciplina(this.codigo, this.nome, this.descricao)
+      this.disciplinasService.addDisciplina(this.codigo, this.nome, this.preco, this.url, this.categoria)
         .subscribe(disciplina => {
             console.log(disciplina);
             this.cadastro_ok = true;
             this.cadastro_erro = false;
             this.codigo = null;
             this.nome = null;
-            this.descricao = null;
+            this.preco = null;
           },
           erro => {
             this.cadastro_ok = false;

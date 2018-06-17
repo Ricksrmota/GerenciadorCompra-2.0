@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   usuario: string;
   senha: string;
+ 
   erro = null;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -20,14 +21,15 @@ export class LoginComponent implements OnInit {
   }
 
   entrar() {
-    this.authService.auth(this.usuario, this.senha)
+    this.authService.auth(this.usuario,this.senha)
       .subscribe(usuarios => {
-        if (usuarios.length > 0) {
+        if (usuarios.length > 0 ) {
           this.erro = null;
           this.authService.set(usuarios[0]);
           this.router.navigate(['admin']);
         } else {
           this.erro = 'Login ou senha incorretos';
+
         }
       });
   }

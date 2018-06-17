@@ -14,24 +14,24 @@ export class DisciplinasService {
   }
 
   getDisciplinas(): Observable<any[]> {
-    return this.http.get<any[]>(this.API_URL + '/disciplinas');
+    return this.http.get<any[]>(this.API_URL + '/produtos');
   }
 
-  getDisciplina(id: number): Observable<any> {
-    return this.http.get(this.API_URL + '/disciplinas/' + id + '?_embed=turmas');
+  getDisciplina(codigo: number): Observable<any> {
+    return this.http.get(this.API_URL + '/produtos/' + codigo );
   }
 
-  addDisciplina(codigo: string, nome: string, descricao: string): Observable<any> {
-    const disciplina = {codigo: codigo, nome: nome, descricao: descricao};
-    return this.http.post(this.API_URL + '/disciplinas', disciplina);
+  addDisciplina(codigo: string, nome: string, preco: string, url: string, categoria: string): Observable<any> {
+    const disciplina = {codigo: codigo, nome: nome, preco: preco, url: url, categoria: categoria};
+    return this.http.post(this.API_URL + '/produtos', disciplina);
   }
 
-  updateDisciplina(id: number, codigo: string, nome: string, descricao: string): Observable<any> {
-    const disciplina = {codigo: codigo, nome: nome, descricao: descricao};
-    return this.http.patch(this.API_URL + '/disciplinas/' + id, disciplina);
+  updateDisciplina(id: number, codigo: string, nome: string, preco: string, url: string, categoria: string): Observable<any> {
+    const disciplina = {codigo: codigo, nome: nome, preco: preco, url: url, categoria: categoria};
+    return this.http.patch(this.API_URL + '/produtos/' + id, disciplina);
   }
 
   deleteDisciplina(id: number) {
-    return this.http.delete(this.API_URL + '/disciplinas/' + id);
+    return this.http.delete(this.API_URL + '/produtos/' + id);
   }
 }

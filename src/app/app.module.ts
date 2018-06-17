@@ -8,6 +8,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import {PublicoModule} from './publico/publico.module';
 import {AdminModule} from './admin/admin.module';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 @NgModule({
   imports: [
@@ -21,7 +24,10 @@ import {AdminModule} from './admin/admin.module';
   ],
   declarations: [
     AppComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    PaginaInicialComponent,
+    CarrinhoComponent,
+    ListaProdutosComponent
   ],
   providers: [
 

@@ -13,10 +13,10 @@ import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada/pagina-nao-e
 const routes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
-      {path: 'disciplinas', component: ListaDeDisciplinasComponent},
-      {path: 'disciplinas/:id', component: DisciplinaComponent},
-      {path: 'disciplinas/:id/novo', component: CadastroDeDisciplinaComponent},
-      {path: 'disciplinas/:id/editar', component: CadastroDeDisciplinaComponent},
+      {path: 'produtos', component: ListaDeDisciplinasComponent},
+      {path: 'produtos/:codigo', component: DisciplinaComponent},
+      {path: 'produtos/:codigo/novo', component: CadastroDeDisciplinaComponent},
+      {path: 'produtos/:codigo/editar', component: CadastroDeDisciplinaComponent},
       {path: 'cadastrar-turma', component: CadastroDeTurmaComponent},
       {path: 'turmas', component: ListaDeTurmasComponent},
       {path: 'turmas/:id', component: TurmaComponent},

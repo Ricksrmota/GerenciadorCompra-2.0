@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-dark navbar-expand-lg " style="background-color: #a80000;">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">Gerenciador Escolar</a>
+    <a class="navbar-brand" routerLink="/admin">Painel do Administrador</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,11 +12,9 @@
           <a class="nav-link" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/disciplinas" routerLinkActive="active">Disciplinas</a>
+          <a class="nav-link" routerLink="/admin/produtos" routerLinkActive="active">Produtos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/turmas" routerLinkActive="active">Turmas</a>
-        </li>
+
       </ul>
       <div class="navbar-text">
         Olá, {{usuario?.nome}}! |
@@ -32,6 +30,6 @@
 
   <hr>
   <footer>
-    <small>Gerenciador Escolar (copyleft) 2017</small>
+    <small>Gerenciador de Produto (copyleft) 2018</small>
   </footer>
 </div>
