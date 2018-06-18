@@ -1,21 +1,8 @@
 <!--<a routerLink="/cadastrar-turma" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Cadastrar</a>-->
 <h1>Carrinho</h1>
 <div class="row">
-  <div class="col-9">
-    <!--<div class="mb-2">
-      <form class="form-inline" #formPesquisa="ngForm" (submit)="pesquisar()">
-        <div class="col-12 p-0">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Pesquisar por..." aria-label="Pesquisar por..." name="q" [(ngModel)]="q">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="submit">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-          </div>
-        </div>
-      </form>
-    </div>-->
+  <div class="col-5">
+
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
@@ -26,9 +13,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let turma of turmas">
+        <tr *ngFor="let carrinho of carrinhos">
           <th scope="row">{{turma.codigo}}</th>
-          <td>{{turma.disciplina.nome}}</td>
+          <td>{{carrinho.disciplina.nome}}</td>
           <td>{{turma.ano}}</td>
           <td>
             <button class="btn btn-danger btn-sm" (click)="excluir(turma)">

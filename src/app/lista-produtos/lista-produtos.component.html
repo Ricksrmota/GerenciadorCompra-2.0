@@ -5,9 +5,76 @@
   <div class="card-body">
   
     <ul class="list-unstyled mt-3 mb-4">
-      <li>Cadastrar</li>
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+        <tr>
+            
+            <th>Nome</th>
+            <th>Preço</th>
+            <th width="250">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let disciplina of disciplinas" [class.table-active]="editando == disciplina">
+            
+            <td>{{disciplina.nome}}</td>
+            <td>{{disciplina.preco}}</td>
+            <td>
+                <button class="btn btn-success" (click)="ver(disciplina)"> Ver</button>
+                <button class="btn btn-info" (click)="comprar(disciplina)"> Comprar</button>
+              <!--<a href="javascript:void(0)" class="btn btn-success" (click)="excluir(disciplina)">Ver</a>
+              <a [routerLink]="['/admin/produtos', disciplina.id, 'editar']" class="btn btn-info">Comprar</a>-->
+              
+          </td>
+
+        </tr>
+        </tbody>
+    </table>
 
     </ul>
 
   </div>
+</div>
+
+<div class="container">
+    <div *ngIf="vendo!=false ">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-center">
+                   Visualizar!
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-outline-danger" (click)="cancelar()">Fechar<i class="fa fa-close"></i></button>
+                </div>
+
+        </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+
+                    <form #cadastro="ngForm">
+                        <div class="form group">
+                        <label for="nome">Nome:</label>                      
+                            {{nome}}
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço:</label>
+                          {{preco}}
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">URL:</label><br>
+                           {{url}}
+                        </div>
+
+                       
+                        
+                        <div class="text-right">
+                         
+                    <button type="reset" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+                
+                        </div>
+                    </form>                            
+                </blockquote>
+            </div>
+        </div>
+    </div>
 </div>
